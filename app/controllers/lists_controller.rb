@@ -4,12 +4,13 @@ class ListsController < ApplicationController
   end
   
   def create
-    list = List.new(list_params)
+    list = List.new
     list.save
     redirect_to '/top'
   end
   
   def index
+    @lists = List.all
   end
   
   def show
